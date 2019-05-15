@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Garnet</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<header class="page-header page-header__static">
+		<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+			<symbol id="svg-logo" viewBox="0 0 133 28">
+				<path d="M32.36123,9.78364l-1.1248,3.33172l-1.12335,3.42329h4.48685l-1.26745,-3.43387l-0.02157,-0.0654l-0.40581,-1.38339zM31.75908,6.05764l0.5917,-0.24541l0.57405,0.27219l3.57912,10.99052l-0.22011,0.70073l-0.51964,0.44909h-6.76785l-0.52725,-0.37372l-0.22205,-0.7462zM31.19687,1.88567l-7.79463,24.01781h2.13634l1.57476,-5.19223l0.75525,-0.58612h8.83554l0.74921,0.56058l1.75816,5.21777h2.14352l-7.97592,-24.01781zM29.98154,0.78631c0.22692,-0.32825 0.40627,-0.58861 1.08286,-0.58861h2.63166c0.31136,0 0.60764,0.14887 0.81812,0.37248c0.17395,0.18375 0.30035,0.42916 0.34056,0.69325l8.23833,24.80948l0.04663,0.27593v0.19932c0,1.04268 0,1.04268 -0.984,1.04268h-3.1959c-0.51714,0 -0.51752,0 -0.93855,-0.44597l-0.18644,-0.3133l-1.69106,-5.01907h-7.69762l-1.51436,4.99291l-0.19276,0.33635c-0.42381,0.44909 -0.77555,0.44909 -1.12638,0.44909h-3.00798c-0.25692,0 -0.51413,0 -0.79464,-0.29649l-0.00294,-0.00311c-0.27473,-0.29213 -0.37542,-0.67457 -0.13649,-1.2339l8.07772,-24.89045l0.18946,-0.32327c0.01505,-0.01557 0.0301,-0.03737 0.04377,-0.0573zM56.06749,5.47215h-4.28013v7.6781h4.28013c1.60799,0 2.50589,-0.10713 2.9286,-0.44784c0.33146,-0.26659 0.41122,-0.87202 0.41122,-1.89726v-2.98852c0,-1.02462 -0.07977,-1.62942 -0.41122,-1.89663c-0.42271,-0.34009 -1.32061,-0.44784 -2.9286,-0.44784zM50.99171,3.78542h5.07578c1.96323,0 3.13383,0.19122 3.88588,0.79665c0.84311,0.67955 1.04551,1.66929 1.04551,3.23456v2.98852c0,1.56651 -0.20241,2.55625 -1.04551,3.23518c-0.75205,0.60605 -1.92265,0.79727 -3.88588,0.79727h-5.07578l-0.4986,-0.31455l-0.29705,-0.52882v-9.36545l0.33276,-0.53006zM48.21559,1.88567v24.01781h1.98048v-8.32215l0.31475,-0.51075l0.4809,-0.33323h4.69952l0.7056,0.46155l4.19771,8.70459h2.42575l-4.26535,-8.31903l0.17992,-0.68516l0.3702,-0.54376c1.28883,-0.25538 2.20417,-0.83651 2.78631,-1.72161c0.60528,-0.91998 0.88789,-2.20433 0.88789,-3.82877v-2.98852c0,-2.05173 -0.43783,-3.5435 -1.39311,-4.49337c-0.97198,-0.96607 -2.53279,-1.43758 -4.76662,-1.43758zM46.97448,0.57017c0.21029,-0.22361 0.50734,-0.37248 0.82108,-0.37248h9.02399c2.65377,0 4.57092,0.62349 5.85453,1.90037c1.30058,1.29245 1.89667,3.18784 1.89667,5.71856v2.98852c0,1.9639 -0.37552,3.56904 -1.17996,4.7911c-0.65117,0.98912 -1.5621,1.70479 -2.75814,2.13146l4.21431,8.21937l0.09977,0.40175v0.19932c0,1.04268 -0.58599,1.04268 -1.1717,1.04268h-3.38398c-0.51743,0 -0.51743,0 -0.93847,-0.44597l-0.14309,-0.21489l-4.10133,-8.50589h-3.42077v8.12407c0,1.04268 0,1.04268 -0.98383,1.04268h-3.00798c-0.1531,0 -0.30603,0 -0.50705,-0.07163c-0.39894,-0.1389 -0.66458,-0.41857 -0.66458,-0.97105v-25.10783c0,-0.33261 0.14034,-0.64716 0.35055,-0.87015zM86.18977,1.88567v11.90925l0.10189,4.33828l0.07645,2.8627l-0.51586,0.28839l-0.61932,-0.0436c-4.0177,-7.08575 -7.26177,-12.3029 -11.48628,-19.35502h-2.59623v24.01781h2.16839v-11.90925l-0.10271,-4.26354l-0.07372,-2.68083l0.51468,-0.3077l0.63658,0.04485c3.69165,6.55133 7.61086,12.67724 11.46856,19.11646h2.40795v-24.01781zM84.95196,0.57017c0.21057,-0.22361 0.50705,-0.37248 0.81814,-0.37248h3.00791c0.98362,0 0.98362,0.62162 0.98362,1.24262v25.10783c0,1.04268 0,1.04268 -0.98362,1.04268h-2.54208c-1.49803,0 -1.59248,-0.41172 -2.35407,-1.67988c-3.08144,-5.13368 -6.14643,-10.16459 -9.04961,-15.41475l0.07784,3.49803v12.55392c0,1.04268 -0.5859,1.04268 -1.17161,1.04268h-3.00774c-0.15282,0 -0.30602,0 -0.50722,-0.07163c-0.39875,-0.1389 -0.66467,-0.41857 -0.66467,-0.97105v-25.10783c0,-0.3295 0.14109,-0.64405 0.35231,-0.86828l-0.00147,-0.00187c0.21029,-0.22361 0.5076,-0.37248 0.82106,-0.37248h3.1959c0.51661,0 0.93739,0.44535 0.93847,0.4466l0.10897,0.14513c3.33118,5.56159 6.66826,10.92449 9.70406,16.658l-0.07994,-3.6525v-12.3546c0,-0.33012 0.14162,-0.64591 0.35376,-0.87015zM97.09336,1.88567v24.01781h13.44795v-1.70043h-10.48365l-0.47695,-0.34756l-0.31897,-0.4958v-7.77215l0.23508,-0.52757l0.56084,-0.31517h9.35562v-1.90037h-9.35562l-0.48824,-0.33074l-0.30767,-0.512v-7.37289l0.22709,-0.57802l0.56883,-0.26534h10.48365v-1.89975zM95.85263,0.57017c0.21029,-0.22361 0.50732,-0.37248 0.82106,-0.37248h14.2873c0.31126,0 0.60757,0.14887 0.81814,0.37248c0.21212,0.22423 0.35385,0.54003 0.35385,0.87015v2.78921c0,0.33323 -0.14034,0.64841 -0.35055,0.87139c-0.21057,0.22236 -0.50797,0.37123 -0.82144,0.37123h-10.10757v5.68554h8.97964c0.31374,0 0.61077,0.14887 0.82134,0.37123c0.21021,0.22361 0.35055,0.53878 0.35055,0.87139v2.78921c0,0.33074 -0.14145,0.64591 -0.35385,0.87015c-0.21057,0.22299 -0.50659,0.37185 -0.81804,0.37185h-8.97964v6.08418h10.10757c0.31126,0 0.60757,0.14887 0.81814,0.37248h0.0033c0.21021,0.22236 0.35055,0.53754 0.35055,0.87077v2.78921c0,1.04268 -0.58655,1.04268 -1.17199,1.04268h-14.2873c-0.1531,0 -0.30611,0 -0.50705,-0.07163c-0.39892,-0.1389 -0.66465,-0.41857 -0.66465,-0.97105v-25.10783c0,-0.33261 0.14015,-0.64716 0.35065,-0.87015zM131.40847,3.78542v-1.89975h-15.13985v1.89975h5.78413l0.46638,0.32265l0.32927,0.52072v21.2747h1.98021v-21.2747l0.33394,-0.512l0.46171,-0.33137zM131.82805,0.1977c0.31357,0 0.61096,0.14887 0.82108,0.37248l-0.00128,0.00187c0.21103,0.22423 0.35219,0.53878 0.35219,0.86828v2.78921c0,0.33137 -0.14063,0.64467 -0.35055,0.86828l-0.0033,0.00311c-0.21048,0.22236 -0.5065,0.37123 -0.81814,0.37123h-5.40815v21.076c0,1.04268 0,1.04268 -1.17125,1.04268h-2.82011c-0.58554,0 -1.1717,0 -1.1717,-1.04268v-21.076h-5.40789c-0.30989,0 -0.60646,-0.14887 -0.81812,-0.37123l-0.00322,-0.00374c-0.21048,-0.22486 -0.35055,-0.53816 -0.35055,-0.86766v-2.78921c0,-0.33261 0.14036,-0.64716 0.35055,-0.87015h0.00322c0.21055,-0.22299 0.50676,-0.37248 0.81812,-0.37248zM2.16267,1.85204c1.48739,-1.24449 3.80695,-1.85303 7.28235,-1.85303h0.18816c3.15376,0 5.35051,0.43601 6.86626,1.38837c1.61478,1.0159 2.43237,2.55563 2.7529,4.70639l-0.78333,0.9723c-0.07261,0 -2.71225,2.21367 -2.72015,2.2199l-0.47575,0.17129c-0.00349,0 -1.17189,0 -1.17189,-1.04268v-0.79727c0,-0.99597 -0.14908,-1.62506 -0.64053,-1.95643c-0.63034,-0.4248 -1.81856,-0.58799 -3.82751,-0.58799h-0.18816c-1.99867,0 -3.13604,0.15883 -3.71489,0.57491c-0.44886,0.32202 -0.56488,0.96046 -0.56488,1.96951v12.55392c0,1.02836 0.12144,1.71912 0.59305,2.08972c0.5794,0.45594 1.70465,0.65401 3.68671,0.65401h0.18816c1.99087,0 3.16717,-0.20243 3.79951,-0.67021c0.51321,-0.37933 0.66853,-1.06012 0.66853,-2.07353v-2.74311h-3.90388c-0.1532,0 -0.3064,0 -0.50734,-0.07038h-0.00294c-0.39709,-0.14139 -0.66172,-0.41919 -0.66172,-0.97167v-2.79045c0,-0.33012 0.1409,-0.64405 0.35257,-0.86828l-0.00166,-0.00125c0.2103,-0.22361 0.50734,-0.37248 0.82108,-0.37248h7.89532c0.31357,0 0.61087,0.14887 0.82136,0.37248l-0.00156,0.00125c0.2113,0.22423 0.35219,0.53816 0.35219,0.86828v6.57562c0,2.65342 -0.60022,4.61047 -2.18142,5.93967c-1.51161,1.27065 -3.87789,1.87857 -7.45005,1.87857h-0.18816c-3.47971,0 -5.80074,-0.60854 -7.28832,-1.88106c-1.55485,-1.32982 -2.15498,-3.28688 -2.15498,-5.93718v-12.55392c0,-2.55252 0.60179,-4.46036 2.16095,-5.76527zM9.44503,1.68511c-3.10402,0 -5.10855,0.48833 -6.29992,1.48554c-1.11948,0.93679 -1.55172,2.41548 -1.55172,4.44666v12.55392c0,2.13208 0.4339,3.66371 1.55779,4.62542c1.19081,1.01901 3.19414,1.5061 6.29385,1.5061h0.18816c3.19553,0 5.24706,-0.48833 6.46137,-1.50983c1.14435,-0.96171 1.57852,-2.4921 1.57852,-4.62168v-6.13027h-7.05599v1.70043h4.27977l0.79601,0.84336v3.58648c0,1.5771 -0.31466,2.69079 -1.35244,3.45692c-0.91827,0.67893 -2.37417,0.97417 -4.70724,0.97417h-0.18816c-2.34169,0 -3.75444,-0.30022 -4.63179,-0.98974c-0.98547,-0.77547 -1.23964,-1.87919 -1.23964,-3.44135v-12.55392c0,-1.58146 0.25986,-2.63723 1.26774,-3.35975c0.87788,-0.63097 2.27861,-0.87077 4.60369,-0.87077h0.18816c2.31525,0 3.75885,0.23669 4.67943,0.85769c0.97528,0.65713 1.32473,1.61198 1.37402,3.00409c0.57692,-0.44286 1.32666,-1.00531 1.91027,-1.39709c-0.28566,-1.37218 -0.86945,-2.36192 -1.90567,-3.01344c-1.2569,-0.79042 -3.19618,-1.15293 -6.05804,-1.15293z"></path>
+			</symbol>
+			<symbol id="svg-vk" viewBox="0 0 32 19">
+				<path d="M31.82852,17.16105c-0.03874,-0.08674 -0.0749,-0.15873 -0.10841,-0.21656c-0.55515,-1.04091 -1.61608,-2.31845 -3.18194,-3.8332l-0.03314,-0.03482v0l-0.01661,-0.01711v0l-0.01671,-0.01711v0h-0.0168c-0.71065,-0.70574 -1.1607,-1.17958 -1.34924,-1.4227c-0.34486,-0.46263 -0.42215,-0.93057 -0.23361,-1.40499c0.13319,-0.35877 0.63336,-1.11585 1.49941,-2.27183c0.45547,-0.6131 0.8163,-1.10464 1.08268,-1.47462c1.92146,-2.65952 2.75456,-4.35897 2.49901,-5.09893l-0.09932,-0.1729c-0.06664,-0.10445 -0.23875,-0.19945 -0.51614,-0.28619c-0.27794,-0.08733 -0.63318,-0.10149 -1.06652,-0.04367l-4.79774,0.03482c-0.07766,-0.02891 -0.18863,-0.02596 -0.3332,0.00885c-0.14439,0.03422 -0.21663,0.05193 -0.21663,0.05193v0l-0.08353,0.04367v0l-0.06627,0.05193c-0.05553,0.03422 -0.11667,0.095 -0.18331,0.18175c-0.06627,0.08674 -0.12181,0.18824 -0.16614,0.30389c-0.52238,1.39909 -1.11618,2.69964 -1.78277,3.90224c-0.41095,0.71695 -0.7883,1.33832 -1.13298,1.86467c-0.34422,0.52577 -0.63299,0.91345 -0.86596,1.16188c-0.23342,0.24843 -0.44409,0.44788 -0.63327,0.59835c-0.18891,0.15047 -0.33302,0.21361 -0.43289,0.1906c-0.10005,-0.02301 -0.19423,-0.04603 -0.28354,-0.06904c-0.15531,-0.10445 -0.28033,-0.24607 -0.3746,-0.42486c-0.09464,-0.17939 -0.15834,-0.40539 -0.19166,-0.67683c-0.03314,-0.27203 -0.05278,-0.5057 -0.05829,-0.7022c-0.00523,-0.1965 -0.00285,-0.47443 0.00835,-0.8332c0.01157,-0.35818 0.0168,-0.60071 0.0168,-0.72817c0,-0.43961 0.00817,-0.9164 0.02469,-1.43096c0.0168,-0.51455 0.03038,-0.9223 0.04176,-1.22266c0.0112,-0.30035 0.01661,-0.61841 0.01661,-0.95417c0,-0.33517 -0.01955,-0.59835 -0.05838,-0.78894c-0.03828,-0.1906 -0.09702,-0.37588 -0.17449,-0.55527c-0.07784,-0.1788 -0.19184,-0.31747 -0.34146,-0.41601c-0.14989,-0.09854 -0.33623,-0.17644 -0.55809,-0.23426c-0.58866,-0.13867 -1.33822,-0.21361 -2.24916,-0.22541c-2.06567,-0.02301 -3.39288,0.11566 -3.98153,0.4166c-0.23324,0.12687 -0.44436,0.30035 -0.63299,0.51987c-0.20001,0.25433 -0.22783,0.39359 -0.08353,0.4166c0.6665,0.10386 1.1383,0.35228 1.41606,0.74528l0.09996,0.2083c0.07784,0.15047 0.15568,0.4166 0.23333,0.7978c0.07766,0.38179 0.12777,0.8037 0.1498,1.26632c0.05544,0.84382 0.05544,1.56668 0,2.16798c-0.05553,0.6013 -0.10813,1.06983 -0.15825,1.40499c-0.05003,0.33517 -0.12493,0.6072 -0.22489,0.81491c-0.09996,0.2083 -0.16669,0.33576 -0.20001,0.38179c-0.03332,0.04603 -0.06104,0.07494 -0.08325,0.08674c-0.1443,0.05724 -0.29437,0.08674 -0.44978,0.08674c-0.15568,0 -0.34431,-0.08084 -0.56635,-0.24312c-0.22204,-0.16168 -0.45253,-0.38415 -0.69137,-0.66798c-0.23875,-0.28324 -0.50816,-0.67919 -0.80804,-1.18784c-0.29979,-0.50865 -0.61078,-1.10995 -0.93287,-1.80389l-0.26647,-0.50275c-0.1666,-0.32396 -0.39415,-0.79485 -0.68283,-1.41385c-0.28896,-0.61841 -0.54441,-1.21676 -0.76636,-1.79504c-0.08876,-0.24312 -0.22213,-0.42781 -0.39984,-0.55527l-0.08335,-0.05193c-0.05535,-0.04603 -0.14439,-0.095 -0.26647,-0.14752c-0.12217,-0.05193 -0.24976,-0.08969 -0.38323,-0.11271l-4.56459,0.03482c-0.46639,0 -0.78289,0.10976 -0.94949,0.32927l-0.06673,0.10445c-0.03332,0.05783 -0.05012,0.15047 -0.05012,0.27734c0,0.12746 0.03332,0.28324 0.10005,0.46853c0.66631,1.63041 1.39091,3.20299 2.17389,4.71774c0.78298,1.51416 1.46324,2.73446 2.04061,3.65912c0.57755,0.92525 1.16621,1.79799 1.76588,2.6188c0.59976,0.8214 0.99685,1.34717 1.19099,1.57848c0.19451,0.2319 0.34725,0.4048 0.45831,0.52046l0.41655,0.41601c0.26656,0.27793 0.65796,0.61015 1.17438,0.99725c0.5166,0.38769 1.08846,0.76947 1.71594,1.14536c0.62767,0.37529 1.35777,0.68155 2.19078,0.91876c0.833,0.23721 1.6437,0.33281 2.43219,0.28678h1.91586c0.38864,-0.03541 0.68293,-0.16227 0.88303,-0.38179l0.06627,-0.08733c0.04452,-0.06845 0.08628,-0.17585 0.12484,-0.32042c0.03892,-0.14457 0.05829,-0.30389 0.05829,-0.47679c-0.01138,-0.49685 0.02497,-0.94532 0.10804,-1.34422c0.08307,-0.39831 0.17771,-0.69925 0.28354,-0.90165c0.10584,-0.2024 0.22526,-0.37293 0.35799,-0.51101c0.13319,-0.13926 0.2281,-0.22305 0.28373,-0.25197c0.05535,-0.02891 0.0995,-0.04898 0.13282,-0.06078c0.26656,-0.09264 0.5803,-0.00295 0.9415,0.26908c0.36101,0.27144 0.69972,0.6072 1.0164,1.0061c0.3165,0.3989 0.69688,0.84677 1.14096,1.34422c0.44445,0.49685 0.833,0.86684 1.16611,1.10995l0.33311,0.2083c0.22241,0.13867 0.51118,0.26613 0.8666,0.3812c0.35477,0.11566 0.66567,0.14516 0.93269,0.08674l4.26453,-0.06904c0.42178,0 0.75003,-0.07258 0.9829,-0.21715c0.23324,-0.14398 0.37175,-0.3033 0.41655,-0.47679c0.04452,-0.17349 0.04691,-0.36998 0.00835,-0.59009c-0.03938,-0.21951 -0.0783,-0.37234 -0.11703,-0.45968z"></path>
+			</symbol>
+			<symbol id="svg-inst" viewBox="0 0 32 32">
+				<path d="M31.99995,15.99957c0,4.34539 -0.01854,4.89063 -0.09684,6.59716c-0.07729,1.7024 -0.34835,2.86605 -0.74342,3.88336c-0.83163,2.14968 -2.52958,3.84795 -4.67924,4.67938c-1.01769,0.39477 -2.18114,0.66621 -3.8835,0.74351c-1.70667,0.07848 -2.2509,0.09677 -6.59703,0.09677c-4.34503,0 -4.89027,-0.01829 -6.59694,-0.09677c-1.70236,-0.0773 -2.8659,-0.34874 -3.88359,-0.74351c-1.06771,-0.40185 -2.03428,-1.03206 -2.83313,-1.84579c-0.81419,-0.79898 -1.44443,-1.76554 -1.84601,-2.83359c-0.39507,-1.01731 -0.66613,-2.18096 -0.74342,-3.88336c-0.07839,-1.70653 -0.09684,-2.25177 -0.09684,-6.59716c0,-4.3448 0.01845,-4.89004 0.09684,-6.59716c0.07729,-1.70181 0.34725,-2.86546 0.74232,-3.88336c0.40269,-1.06747 1.03293,-2.03403 1.84711,-2.833c0.79886,-0.81432 1.76542,-1.44453 2.83313,-1.84579c1.01769,-0.39536 2.18123,-0.66621 3.88359,-0.74351c1.70667,-0.07848 2.25191,-0.09677 6.59694,-0.09677c4.34503,0 4.89036,0.01829 6.59703,0.09677c1.70236,0.0773 2.86581,0.34815 3.8835,0.74233c1.06781,0.40244 2.03437,1.03265 2.83433,1.84697c0.81309,0.79898 1.44323,1.76554 1.84491,2.833c0.39617,1.0179 0.66613,2.18155 0.74443,3.88336c0.07729,1.70712 0.09583,2.25236 0.09583,6.59716zM29.11669,15.99957c0,-4.27222 -0.01634,-4.77793 -0.09253,-6.46498c-0.07187,-1.56019 -0.33201,-2.40755 -0.55185,-2.97167c-0.25582,-0.69453 -0.66503,-1.32356 -1.19622,-1.8393c-0.51587,-0.53108 -1.145,-0.9406 -1.8394,-1.1961c-0.56378,-0.2201 -1.41175,-0.48033 -2.97146,-0.55114c-1.68703,-0.0773 -2.19317,-0.09323 -6.46531,-0.09323c-4.27205,0 -4.77819,0.01593 -6.46531,0.09264c-1.55972,0.0714 -2.40759,0.33163 -2.97137,0.55173c-0.6944,0.25551 -1.32354,0.66503 -1.83949,1.1961c-0.5311,0.51574 -0.9404,1.14477 -1.19723,1.8393c-0.21883,0.56412 -0.47897,1.41149 -0.55075,2.97167c-0.07619,1.68706 -0.09363,2.19276 -0.09363,6.46498c0,4.27222 0.01744,4.77852 0.09363,6.46675c0.07178,1.5596 0.33192,2.40637 0.55075,2.9699c0.25683,0.69571 0.66613,1.32356 1.19723,1.83989c0.51596,0.53108 1.14399,0.94001 1.83949,1.19728c0.56378,0.21833 1.41166,0.47974 2.97137,0.55055c1.68712,0.0773 2.19216,0.09382 6.46531,0.09382c4.27214,0 4.77828,-0.01652 6.46531,-0.09382c1.55972,-0.07081 2.40768,-0.33222 2.97146,-0.55055c1.39532,-0.53875 2.49791,-1.64162 3.03563,-3.03717c0.21984,-0.56353 0.47998,-1.41031 0.55185,-2.9699c0.07619,-1.68824 0.09253,-2.19453 0.09253,-6.46675zM26.4609,7.45867c0,1.06038 -0.8599,1.92014 -1.92,1.92014c-1.0601,0 -1.92,-0.85976 -1.92,-1.92014c0,-1.05979 0.8599,-1.92014 1.92,-1.92014c1.0601,0 1.92,0.86035 1.92,1.92014zM24.21541,15.99957c0,4.53776 -3.6778,8.21577 -8.21549,8.21577c-4.5376,0 -8.21659,-3.67801 -8.21659,-8.21577c0,-4.53776 3.67899,-8.21518 8.21659,-8.21518c4.5377,0 8.21549,3.67742 8.21549,8.21518zM21.33326,15.99957c0,-2.94512 -2.38804,-5.3332 -5.33334,-5.3332c-2.9453,0 -5.33325,2.38808 -5.33325,5.3332c0,2.94571 2.38795,5.3332 5.33325,5.3332c2.9453,0 5.33334,-2.38749 5.33334,-5.3332z"></path>
+			</symbol>
+		</svg>
+		
+
+		<div class="page-header--wrap container page-header--wrap__static">
+			<button class="page-header--btn-burger">
+				<span class="visually-hidden">Открыть меню</span>
+			</button>
+			<a href="#" class="page-header--svg-logo-link">
+				<svg class="page-header--svg-logo page-header--svg-logo__static" width="133" height="28">
+					<use xlink:href="#svg-logo"></use>
+				</svg>
+			</a>
+
+			<div class="page-header--inner-wrap">
+				<button class="page-header--btn-closed">
+					<span class="visually-hidden">Закрыть меню</span>
+				</button>
+
+				<nav class="page-header--nav nav">
+					<ul class="nav--list p0">
+						<li class="nav--item">
+							<a href="#about" class="nav--link">О компании</a>
+						</li>
+						<li class="nav--item">
+							<a href="#why" class="nav--link">Почему мы?</a>
+						</li>
+						<li class="nav--item">
+							<a href="#projects" class="nav--link">Проекты</a>
+						</li>
+						<li class="nav--item nav--item__success">
+							<a href="#success" class="nav--link">Истории успеха</a>
+						</li>
+						<li class="nav--item">
+							<a href="#job" class="nav--link">О вакансии</a>
+						</li>
+						<li class="nav--item">
+							<a href="#contacts" class="nav--link">Контакты</a>
+						</li>
+					</ul>
+				</nav>
+
+				<ul class="page-header--soc-list p0 page-header--soc-list__static">
+					<li class="page-header--soc-item">
+						<a href="https://vk.com/" class="page-header--soc-link" target="_blank">
+							<svg width="32" height="19">
+								<use class="page-header--soc-svg" xlink:href="#svg-vk"></use>
+							</svg>
+							<span class="visually-hidden">Вконтакте</span>
+						</a>
+					</li>
+					<li class="page-header--soc-item">
+						<a href="https://www.instagram.com/?hl=ru" class="page-header--soc-link" target="_blank">
+							<svg class="page-header--soc-svg" width="32" height="32">
+								<use xlink:href="#svg-inst"></use>
+							</svg>
+							<span class="visually-hidden">Инстаграмм</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<button class="page-header--btn-answer page-header--btn-answer__static">
+				<span class="page-header--btn-answer-text">Откликнуться</span>
+			</button>
+		</div>
+	</header>
+
+
+	<main class="page-main">
+		<section class="page-main__join">
+			<div class="page-main__join-nobg container">
+				<h2 class="page-main__join-head p0">Присоединяйтесь к нам!</h2>
+				<p class="page-main__join-text p0">Работайте брокером по премиальной недвижимости в <span class="page-main__join-city"><a class="page-main__join-link links" href="#">Москве,</a></span> <span class="page-main__join-city"><a class="page-main__join-link links" href="#">Санкт-Петербурге</a></span> или <span class="page-main__join-city"><a class="page-main__join-link links" href="#">Ярославле</a></span> вместе с командой профессионалов.</p>
+				<button class="page-main__join-button main-btn">откликнуться</button>
+			</div>
+		</section>
+
+
+		<section class="page-main__about" id="about">
+			<div class="container">
+				<h2 class="page-main__about-head p0 visually-hidden">О нас</h2>
+				<div class="page-main__about-wrap">
+					<p class="page-main__about-text p0">GARNET — агентство недижимости, сконцентрированное на премиум-сегменте и совместных инвестициях с клиентами.</p>
+					<a class="page-main__about-link links" download href="download/sample.pdf" target="_blank">Скачать презентацию</a>
+				</div>
+			</div>
+
+			<div class="page-main__about-wrapper">
+
+		        <div class="page-main__about-slide">
+		        	<picture>
+		        		<source media="(min-width: 1520px)" srcset="img/about/slider-desc-about-3.jpg">
+						<source media="(min-width: 1250px)" srcset="img/about/slider-desc-about-1.jpg">
+						<source media="(min-width: 768px)" srcset="img/about/slider-tab-about-1.jpg">
+						<source srcset="img/about/slider-about-1.jpg">
+						<img src="img/about/slider-about-1.jpg" alt="Наш офис" class="page-main__about-image">
+					</picture> 
+		        </div>
+
+		        <div class="page-main__about-slide">
+		            <picture>
+		        		<source media="(min-width: 1520px)" srcset="img/about/slider-desc-about-3-2.jpg">
+						<source media="(min-width: 1250px)" srcset="img/about/slider-desc-about-3-1.jpg">
+						<source media="(min-width: 768px)" srcset="img/about/slider-tab-about-2.jpg">
+						<source srcset="img/about/slider-about-2.jpg">
+						<img src="img/about/slider-about-2.jpg" alt="Наша команда" class="page-main__about-image">
+					</picture>
+		        </div>
+
+		        <div class="page-main__about-slide">
+		            <picture>
+		        		<source media="(min-width: 1520px)" srcset="img/about/slider-desc-about-3.jpg">
+						<source media="(min-width: 1250px)" srcset="img/about/slider-desc-about-1.jpg">
+						<source media="(min-width: 768px)" srcset="img/about/slider-tab-about-1.jpg">
+						<source srcset="img/about/slider-about-1.jpg">
+						<img src="img/about/slider-about-1.jpg" alt="Наш офис" class="page-main__about-image">
+					</picture>
+		        </div>
+
+		        <div class="page-main__about-slide">
+		            <picture>
+		        		<source media="(min-width: 1520px)" srcset="img/about/slider-desc-about-3-2.jpg">
+						<source media="(min-width: 1250px)" srcset="img/about/slider-desc-about-3-1.jpg">
+						<source media="(min-width: 768px)" srcset="img/about/slider-tab-about-2.jpg">
+						<source srcset="img/about/slider-about-2.jpg">
+						<img src="img/about/slider-why-1.jpg" alt="Наш офис" class="page-main__about-image">
+					</picture>
+		        </div>
+
+		        <div class="page-main__about-slide">
+		            <picture>
+		        		<source media="(min-width: 1520px)" srcset="img/about/slider-desc-about-3.jpg">
+						<source media="(min-width: 1250px)" srcset="img/about/slider-desc-about-1.jpg">
+						<source media="(min-width: 768px)" srcset="img/about/slider-tab-about-1.jpg">
+						<source srcset="img/about/slider-about-1.jpg">
+						<img src="img/about/slider-about-1.jpg" alt="Наш офис" class="page-main__about-image">
+					</picture>
+		        </div>
+
+
+			    <div class="page-main__about-toggles">
+			        <button class="page-main__about-button" onclick="currentSlide(1)"></button>
+			        <button class="page-main__about-button" onclick="currentSlide(2)"></button>
+			        <button class="page-main__about-button" onclick="currentSlide(3)"></button>
+			        <button class="page-main__about-button" onclick="currentSlide(4)"></button>
+			        <button class="page-main__about-button" onclick="currentSlide(5)"></button>
+			    </div>
+
+			    <div class="page-main__about-toggles-arrow">
+			        <button class="page-main__about-button-arrow1" onclick="minusSlide()"></button>
+			        <button class="page-main__about-button-arrow2" onclick="plusSlide()"></button>
+			    </div>
+			</div>  
+			<div class="page-main__about-office container">
+				<p class="page-main__about-office-text p0">Московский офис «Garnet» находится в здании ЖК «Смоленский»</p>
+			</div>
+		</section>
+
+		<section class="page-main__why" id="why">
+			<div class="page-main__why-noimg container">
+				<h2 class="page-main__why-head p0">преимущества</h2>
+				<span class="page-main__why-work">работы у нас</span>
+				<ul class="page-main__why-list p0">
+					<li class="page-main__why-item">Престиж компании
+						<p class="page-main__why-text p0">Офисы в центре города, работа с обеспеченными клиентами на дорогих и очень дорогих объектах.</p>
+					</li>
+					<li class="page-main__why-item">Регулярное обучение
+						<p class="page-main__why-text p0">Приглашаем ведущих экспертов рынка на воркшопы и мастер-классы, разбираем ваши кейсы и кейсы конкурентов. Генерируем идеи как взорвать рынок и успешно реализуем лучшие.</p>
+					</li>
+					<li class="page-main__why-item">Профессионализм коллег
+						<p class="page-main__why-text p0">
+						Ваши будущие коллеги - это эксперты в жилой, коммерческой недвижимости, специалисты по ипотеке, инвестициям.</p>
+						<p class="page-main__why-text p0">У нас свой штат IT-специалистов, маркетологов, дизайнеров, работающих на вас.
+						</p>
+					</li>
+					<li class="page-main__why-item">Регулярное обучение
+						<p class="page-main__why-text p0">Приглашаем ведущих экспертов рынка на воркшопы и мастер-классы, разбираем ваши кейсы и кейсы конкурентов. Генерируем идеи как взорвать рынок и успешно реализуем лучшие.</p>
+					</li>
+					<li class="page-main__why-item">Лучшие застройщики - партнеры
+						<p class="page-main__why-text p0">Мы реализуем квартиры, аппартаменты и пентхаусы, работаем с повышенной комиссией на элитных объектах. Особые условия с партнерами позволят вам бронировать лоты для своих клиентов онлайн.</p>
+					</li>
+					<li class="clearfix"></li>
+				</ul>
+			</div>
+
+			<div class="page-main__why-wrapper">
+		        <div class="page-main__why-slide2">
+		            <picture>
+						<source media="(min-width: 1250px)" srcset="img/why/slider-desk-why1.jpg">
+						<source media="(min-width: 768px)" srcset="img/why/slider-tab-why1.jpg">
+						<source srcset="img/why/slider-why1.jpg">
+						<img src="img/why/slider-why1.jpg" alt="Наша команда" class="page-main-why-image">
+					</picture>
+		        </div>
+
+		        <div class="page-main__why-slide2">
+		            <picture>
+						<source media="(min-width: 1250px)" srcset="img/why/slider-desk-why2.jpg">
+						<source media="(min-width: 768px)" srcset="img/why/slider-tab-why2.jpg">
+						<source srcset="img/why/slider-why2.jpg">
+						<img src="img/why/slider-why2.jpg" alt="Наш офис" class="page-main-why-image">
+					</picture>
+		        </div>
+
+		        <div class="page-main__why-slide2">
+		            <picture>
+						<source media="(min-width: 1250px)" srcset="img/why/slider-desk-why1.jpg">
+						<source media="(min-width: 768px)" srcset="img/why/slider-tab-why1.jpg">
+						<source srcset="img/why/slider-why1.jpg">
+						<img src="img/why/slider-why1.jpg" alt="Наша команда" class="page-main-why-image">
+					</picture>
+		        </div>
+
+		        <div class="page-main__why-slide2">
+		            <picture>
+						<source media="(min-width: 1250px)" srcset="img/why/slider-desk-why2.jpg">
+						<source media="(min-width: 768px)" srcset="img/why/slider-tab-why2.jpg">
+						<source srcset="img/why/slider-why1.jpg">
+						<img src="img/why/slider-why2.jpg" alt="Наша команда" class="page-main-why-image">
+					</picture>
+		        </div>
+
+		        <div class="page-main__why-slide2">
+		            <picture>
+						<source media="(min-width: 1250px)" srcset="img/why/slider-desk-why1.jpg">
+						<source media="(min-width: 768px)" srcset="img/why/slider-tab-why1.jpg">
+						<source srcset="img/why/slider-why1.jpg">
+						<img src="img/why/slider-why1.jpg" alt="Наша команда" class="page-main-why-image">
+					</picture>
+		        </div>
+
+
+			    <div class="page-main__why-toggles">
+			        <button class="page-main__why-button2" onclick="currentSlide2(1)"></button>
+			        <button class="page-main__why-button2" onclick="currentSlide2(2)"></button>
+			        <button class="page-main__why-button2" onclick="currentSlide2(3)"></button>
+			        <button class="page-main__why-button2" onclick="currentSlide2(4)"></button>
+			        <button class="page-main__why-button2" onclick="currentSlide2(5)"></button>
+			    </div>
+
+			    <div class="page-main__why-toggles-arrow">
+			        <button class="page-main__why-button-arrow1" onclick="minusSlide2()"></button>
+			        <button class="page-main__why-button-arrow2" onclick="plusSlide2()"></button>
+			    </div>
+			</div>  
+		</section>
+	
+		<section class="page-main__projects container" id="projects">
+			<h2 class="page-main__projects-head visually-hidden">Проекты</h2>
+			<p class="page-main__projects-heading p0">Мы выстроили систему,</p>
+			<p class="page-main__projects-emph p0"> в которой</p>
+			<p class="page-main__projects-emph2 p0">зарабатывают</p>
+			<p class="page-main__projects-wow p0">Минимум холодных звонков, чужих баз и сторонних агрегаторов. Вы получите собственных клиентов в первую рабочую неделю.</p>
+			<p class="page-main__projects-wow p0">И вот почему:</p>
+			
+			<div class="page-main__projects-wrap">
+				<p class="page-main__projects-name">GARNETHOUSE.RU</p>
+				<p class="page-main__projects-descr p0">От 5 до 10 заявок в день мы получаем с нашего основного агрегатора предложений. Прямо сейчас он обновляется и расширяется на Москву и СПб. Топовые позиции в SEO в Ярославле, удобный кабинет брокера и выгрузка фидов в 1 клик - это garnethouse.ru.</p>
+				<picture>
+					<source media="(min-width: 1250px)" srcset="img/projects/project1-desk.jpg">
+					<source srcset="img/projects/project1.jpg">
+					<img src="img/projects/project1.jpg" alt="Проект - GARNETHOUSE.RU" class="page-main__projects-image1">
+				</picture> 
+				<p class="page-main__projects-name page-main__projects-name2 p0">
+				VSELOFTI.RU</p>
+				<p class="page-main__projects-descr p0">
+				Мы захватываем рынок лофт-апартаментов в Москве первым специалированным агрегатором этого типа объектов. Дизайн, юзабилити и 3-6 заявок в день от заинтересованных клиентов. Мы готовим еще 4 аналогичных проекта для Москвы и СПб.</p>
+				<picture>
+					<source media="(min-width: 1250px)" srcset="img/projects/project2-desk.jpg">
+					<source srcset="img/projects/project2.jpg">
+					<img src="img/projects/project2.jpg" alt="Проект - VSELOFTI.RU" class="page-main__projects-image2">
+				</picture>
+				<p class="page-main__projects-name p0">
+				ODOBRI.ONLINE</p>
+				<p class="page-main__projects-descr p0">
+				Даже элитную недвижимость приобретают в ипотеку. Для себя и своих партнеров мы разработали онлайн-сервис одобрения ипотеки, который подает заявки одновременно в 20+ банков-партнеров. Это сильнейший аргумент, который побуждает клиентов выбирать именно нас.</p>
+				<picture>
+					<source media="(min-width: 1250px)" srcset="img/projects/project3-desk.jpg">
+					<source srcset="img/projects/project3.jpg">
+					<img src="img/projects/project3.jpg" alt="Проект - ODOBRI.ONLINE" class="page-main__projects-image3">
+				</picture>
+				<p class="page-main__projects-name p0">
+				GARNETINVEST.RU</p>
+				<p class="page-main__projects-descr p0"> 
+				Целевой трафик на инвестиции позволяет нам каждую неделю встречаться с клиентами, готовыми вкладываться в объекты в Москве, Санкт-Петербурге и Ярославле.
+				<br>
+				<br>
+				Высокую конверсию в сделку обеспечивает наш уникальный оффер - мы готовы инвестировать совместно с клиентом и минимизировать риски. Для опытного брокера - это отличная возможность заработать, ведь, как правило, инвестор выкупает сразу пул квартир.
+				</p>
+				<picture>
+					<source media="(min-width: 1250px)" srcset="img/projects/project4-desk.jpg">
+					<source srcset="img/projects/project4.jpg">
+					<img src="img/projects/project4.jpg" alt="Проект - GARNETINVEST.RU" class="page-main__projects-image4">
+				</picture>
+				<p class="page-main__projects-name p0">
+				ЛИДОГЕНЕРАЦИЯ</p>
+				<p class="page-main__projects-descr p0">
+				Помимо специализированных сайтов, мы развернули digital-воронку по генерации заявок на новостройки Москвы и СПб. Ежедневно мы получаем до 30 заявок на новостройки. Заявки с высоким бюджетом оставляем себе, остальные - продаем партнерам. Это слаженная и бесперебойная система гарантирует клиентов каждому брокеру.</p>
+				<picture>
+					<source media="(min-width: 1250px)" srcset="img/projects/project5-desk.jpg">
+					<source srcset="img/projects/project5.jpg">
+					<img src="img/projects/project5.jpg" alt="Проект - ЛИДОГЕНЕРАЦИЯ" class="page-main__projects-image5">
+				</picture>
+			</div>
+				<div class="page-main__projects-earn-wrap">
+					<div class="page-main__projects-earn-wrap-flex">
+						<p class="page-main__projects-earn p0">зарабатывайте</p>
+						<p class="page-main__projects-earn2 p0">много!</p>
+					</div>
+					<p class="page-main__projects-earn-descr p0">Через 2 месяца у каждого брокера в GARNET есть 20-30 клиентов в работе. Мы платим честную комиссию и помогаем на всех этапах.</p>
+				</div>
+			
+		</section>
+
+		<section class="page-main__success" id="success">
+			<div class="page-main__success-descr">
+				<div class="container">
+					<h2 class="page-main__success-head p0">истории успеха</h2>
+					<p class="page-main__success-head-descr p0">Прочитайте, как наши сотрудники растут вместе с компанией, увеличивая свой доход.</p>
+				</div>
+			</div>
+
+			<div class="page-main__success-pair container">
+				<div class="page-main__success-people">
+					<div class="page-main__success-people-flex container">
+						<div class="page-main__success-people-img">
+							<picture>
+								<source media="(min-width: 1250px)" srcset="img/people/person1-desk.jpg">
+								<source srcset="img/people/person1.jpg" >
+								<img src="img/people/person1.jpg" alt="Max Holden" class="page-main__success-people-image">
+							</picture>
+						</div>
+						<div class="page-main__success-people-texts">	
+							<p class="page-main__success-people-head p0">Max Holden</p>
+							<p class="page-main__success-people-sub p0">Founder & Art Director</p>
+							<p class="page-main__success-people-text p0">Max invented our company. He is the father of our main goals and values. He has founded first core members of our team and helped them to show their unique talents in work process. He made a really important first steps. Max invented our company. He is the father of our main goals and values. He has founded first core members of our team and helped them to show their unique talents in work process. He made a really important first steps.</p>
+						</div>
+					</div>
+				</div>
+				<div class="page-main__success-people">
+					<div class="page-main__success-people-flex container">
+						<div class="page-main__success-people-img">
+							<picture>
+								<source media="(min-width: 1250px)" srcset="img/people/person2-desk.jpg">
+								<source srcset="img/people/person2.jpg">
+								<img src="img/people/person2.jpg" alt="Eva Stark" class="page-main__success-people-image">
+							</picture>
+						</div>
+						<div class="page-main__success-people-texts">	
+							<p class="page-main__success-people-head p0">Eva Stark</p>
+							<p class="page-main__success-people-sub p0">Customers Support</p>
+							<p class="page-main__success-people-text p0">Eva is the voice of our brand. She spends hours to make our clients feel care and enjoy communication with the company. If you have any suggestions or ideas you can write her. Eva like to get clients letters and feedback. Max invented our company. He is the father of our main goals and values. He has founded first core members of our team and helped them to show their unique talents in work process.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="page-main__success-pair container">
+				<div class="page-main__success-people">
+					<div class="page-main__success-people-flex container">
+						<div class="page-main__success-people-img">
+							<picture>
+								<source media="(min-width: 1250px)" srcset="img/people/person3-desk.jpg">
+								<source srcset="img/people/person3.jpg">
+								<img src="img/people/person3.jpg" alt="Max Holden" class="page-main__success-people-image">
+							</picture>
+						</div>
+						<div class="page-main__success-people-texts">	
+							<p class="page-main__success-people-head p0">Max Holden</p>
+							<p class="page-main__success-people-sub p0">Founder & Art Director</p>
+							<p class="page-main__success-people-text p0">Max invented our company. He is the father of our main goals and values. He has founded first core members of our team and helped them to show their unique talents in work process. He made a really important first steps. Max invented our company. He is the father of our main goals and values. He has founded first core members of our team and helped them to show their unique talents in work process. He made a really important first steps.</p>
+						</div>
+					</div>
+				</div>
+				<div class="page-main__success-people">
+					<div class="page-main__success-people-flex container">
+						<div class="page-main__success-people-img">
+							<picture>
+								<source media="(min-width: 1250px)" srcset="img/people/person4-desk.jpg">
+								<source srcset="img/people/person4.jpg">
+								<img src="img/people/person4.jpg" alt="Max Holden" class="page-main__success-people-image">
+							</picture>
+						</div>
+						<div class="page-main__success-people-texts">	
+							<p class="page-main__success-people-head p0">Max Holden</p>
+							<p class="page-main__success-people-sub p0">Founder & Art Director</p>
+							<p class="page-main__success-people-text p0">Max invented our company. He is the father of our main goals and values. He has founded first core members of our team and helped them to show their unique talents in work process. He made a really important first steps. Max invented our company. He is the father of our main goals and values. He has founded first core members of our team and helped them to show their unique talents in work process. He made a really important first steps.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="page-main__success-pair container">
+				<div class="page-main__success-people">
+					<div class="page-main__success-people-flex container">
+						<div class="page-main__success-people-img">
+							<picture>
+								<source media="(min-width: 1250px)" srcset="img/people/person5-desk.jpg">
+								<source srcset="img/people/person5.jpg">
+								<img src="img/people/person5.jpg" alt="Max Holden" class="page-main__success-people-image">
+							</picture>
+						</div>
+						<div class="page-main__success-people-texts">	
+							<p class="page-main__success-people-head p0">Max Holden</p>
+							<p class="page-main__success-people-sub p0">Founder & Art Director</p>
+							<p class="page-main__success-people-text p0">Max invented our company. He is the father of our main goals and values. He has founded first core members of our team and helped them to show their unique talents in work process. He made a really important first steps. Max invented our company. He is the father of our main goals and values. He has founded first core members of our team and helped them to show their unique talents in work process. He made a really important first steps.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="page-main__success-people-toggles-desk">
+		        <button class="page-main__success-people-button-desk" onclick="currentSlideDesk(1)"></button>
+		        <button class="page-main__success-people-button-desk" onclick="currentSlideDesk(2)"></button>
+		        <button class="page-main__success-people-button-desk" onclick="currentSlideDesk(3)"></button>
+			</div>
+
+			<div class="page-main__success-people-toggles">
+		        <button class="page-main__success-people-button3" onclick="currentSlide3(1)"></button>
+		        <button class="page-main__success-people-button3" onclick="currentSlide3(2)"></button>
+		        <button class="page-main__success-people-button3" onclick="currentSlide3(3)"></button>
+		        <button class="page-main__success-people-button3" onclick="currentSlide3(4)"></button>
+		        <button class="page-main__success-people-button3" onclick="currentSlide3(5)"></button>
+			</div>
+
+			<div class="page-main__why-toggles-arrow3">
+		        <button class="page-main__why-button-arrow13" onclick="minusSlide3()"></button>
+		        <button class="page-main__why-button-arrow23" onclick="plusSlide3()"></button>
+		    </div>
+		</section>
+
+		<section class="page-main__vac" id="job">
+			<div class="page-main__vac-bg">
+				<div class="page-main__vac-nobg container">
+					<h2 class="page-main__vac-head p0">вакансия</h2>
+					<p class="page-main__vac-name p0">«брокер по недвижимости»</p>
+					<p class="page-main__vac-descr p0">Станьте ведущим специалистом в своем городе вместе с нами.</p>
+					<p class="page-main__vac-search-head">Мы ищем опытного брокера по первичной недвижимости, который сможет:</p>
+					<ul class="page-main__vac-search-list">
+						<li class="page-main__vac-search-item">Квалифицировать покупателя и грамотно выявить его потребности,</li>
+						<li class="page-main__vac-search-item"> Сделать подборку подходящих объектов среди ЖК, реализуемых компанией,</li>
+						<li class="page-main__vac-search-item">Презентовать ЖК и квартиру на просмотре.</li>
+						<li class="page-main__vac-search-item">Удержать клиента и оказать ему первоклассный сервис.</li>
+					</ul>
+					<p class="page-main__vac-search-sub p0">Все остальное за вас сделает компания.</p>
+				</div>
+				<div class="page-main__vac-new container">
+						<p class="page-main__vac-new-text p0">На этом этапе вы вряд ли удовлетворены текущим положением дел. Нужно что-то менять.</p>
+						<p class="page-main__vac-new-text p0">Мы научим всему что знаем сами и предоставим все инструменты для эффективного старта.</p>
+						<p class="page-main__vac-new-text p0">Вы владеете продвинутыми техниками продаж, клиенты находят вас сами.</p>
+					</div>	
+			</div>
+			
+			<div class="page-main__vac-new-success">
+				<p class="page-main__vac-new-success-text p0">Успех!</p>
+				<a class="page-main__vac-new-success-link">Подробнее</a> 
+				<a class="page-main__vac-new-success-link2">Подробнее о вакансии и услових работы</a>
+				<div class="page-main__vac-new-success-spoiler container" style="display:none">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo facere culpa corrupti perspiciatis, doloribus nesciunt, perferendis! Deleniti perferendis eveniet assumenda aperiam, dolore debitis a porro dolor eum magnam suscipit tenetur.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat tempora, ipsa id laboriosam, suscipit commodi at molestiae ullam rerum hic sint reiciendis, porro libero in accusantium soluta error temporibus odio.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas deleniti unde quas, quasi beatae nesciunt corrupti quo illum nulla soluta, laudantium assumenda sequi dolore cum explicabo. Suscipit illum accusamus iure.</p>
+					<a class="page-main__vac-new-success-link-close">Скрыть подробности</a>
+				</div>
+			</div>
+
+			<div class="page-main__vac-founder container">
+				<img class="page-main__vac-founder-img" src="img/people/founder.jpg" alt="Александр Поздняков" width="460" height="620">
+				<div class="page-main__vac-founder-wrap">
+					<h3 class="page-main__vac-founder-head p0">Александр Поздняков</h3>
+					<p class="page-main__vac-founder-sub p0">Founder & CEO</p>
+					<p class="page-main__vac-founder-text p0"><span class="page-main__vac-founder-span">Москва и Санкт-Петербург</span> – главные площадки на рынке элитной недвижимости старны. Именно там мы и работаем, и объем работы постоянно увеличивается. Только в Москве спрос на элитное жилье в 2018 году вырос в 1,5 раза, причем как на квартиры, так и на апартаменты. Поэтому нашей команде нужны новые сотрудники, которые готовы к сокрушительным победам на таком динамичном рынке. </p>
+					<p class="page-main__vac-founder-text p0">Стартовать можно на любом уровне. Опыт позволяет нам вывести сотрудника на приличные обороты в течение нескольких месяцев. Для этого создана программа адаптации. Теория, наставник и практика – от нас, от вас – желание и решительность.”</p>
+				</div>
+			</div>
+
+			<div class="page-main__vac-team container">
+				<p class="page-main__vac-team-head p0">Хотите попасть в команду GARNET?</p>
+				<p class="page-main__vac-team-descr p0">Прикрепите резюме и напишите о себе. Мы свяжемся.</p>
+				<form class="page-main__vac-team-form" action="#" method="post">
+					<textarea class="page-main__vac-team-textarea" name="textarea-team" id="textarea-team" rows="4" placeholder="Сопроводительный комментарий"></textarea>
+					<div class="page-main__vac-team-wrap">
+						<label class="page-main__vac-team-label" for="downloadFile-team">Загрузить резюме
+							<input type="file" name="downloadFile-team" id="downloadFile-team" accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+						</label>
+						<p class="page-main__vac-team-form-desc">(.doc, .docx или .pdf)</p>
+					</div>
+					<input class="page-main__vac-team-button main-btn" type="submit" value="Отправить">
+				</form>
+			</div>
+		</section>
+
+		<section class="page-main__map" id="contacts">
+			<div class="container">
+				<h2 class="page-main__map-head p0">Контакты</h2>
+				<div class="page-main__map-city">
+					<button class="page-main__map-city-msk city activated">Москва</button>
+					<div class="page-main__map-city-msk-value">
+						<table class="page-main__map-city-msk-table">
+							<tbody><tr>
+								<td class="name">ph.</td>
+								<td class="value"><a href="tel:+74991302626" class="page-main__map-city-link">+7(499) 130-26-26</a></td>
+							</tr>
+							<tr>
+								<td class="name">e-m.</td>
+								<td class="value"><a href="mailto:ceo@garnet.house" class="page-main__map-city-link mail">info@garnet.house</a></td>
+							</tr>
+							<tr>
+								<td class="name">ad.</td>
+								<td class="value">Москва, 1-й Смоленский пер, д. 21</td>
+							</tr>
+						</tbody></table>
+					</div>
+
+				</div>
+				<div class="page-main__map-city">
+					<button class="page-main__map-city-spb city">Санкт-Петербург</button>
+					<div class="page-main__map-city-spb-value">
+						<table class="page-main__map-city-spb-table">
+							<tbody><tr>
+								<td class="name">ph.</td>
+								<td class="value"><a href="tel:+74991302626" class="page-main__map-city-link">+7(499) 130-26-26</a></td>
+							</tr>
+							<tr>
+								<td class="name">e-m.</td>
+								<td class="value"><a href="mailto:info@garnet.house" class="page-main__map-city-link mail">info@garnet.house</a></td>
+							</tr>
+							<tr>
+								<td class="name">ad.</td>
+								<td class="value">Санкт-Петербург, канал Грибоедова, д. 6к2</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</div>
+				<div class="page-main__map-city">
+					<button class="page-main__map-city-yar city">Ярославль</button>
+					<div class="page-main__map-city-yar-value">
+						<table class="page-main__map-city-yar-table">
+							<tbody><tr>
+								<td class="name">ph.</td>
+								<td class="value"><a href="tel:+74852663088" class="page-main__map-city-link">+7(4852) 66-30-88</a></td>
+							</tr>
+							<tr>
+								<td class="name">e-m.</td>
+								<td class="value"><a href="mailto:info@garnet.house" class="page-main__map-city-link mail">info@garnet.house</a></td>
+							</tr>
+							<tr>
+								<td class="name">ad.</td>
+								<td class="value">Ярославль, ул. Свободы, д. 91</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</div>
+			</div>
+
+			<div class="page-main__map-city-cities">
+				<div class="page-main__map-city-msk-g yes">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1888.256193906546!2d37.57995821114379!3d55.749334787688085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54bb67ea0221d%3A0x937fb71f8009de4f!2zMS3QuSDQodC80L7Qu9C10L3RgdC60LjQuSDQv9C10YAuLCAyMSwg0JzQvtGB0LrQstCwLCAxMjEwOTk!5e0!3m2!1sru!2sru!4v1557758196402!5m2!1sru!2sru" width="280" height="186" style="border:0" allowfullscreen></iframe></div>
+				<div class="page-main__map-city-yar-g">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1796.4292360778666!2d39.84761522249196!3d57.625936059819146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b293da3cb6e487%3A0x3dd12a1dd185430d!2z0YPQuy4g0KHQstC-0LHQvtC00YssIDkxLCDQr9GA0L7RgdC70LDQstC70YwsINCv0YDQvtGB0LvQsNCy0YHQutCw0Y8g0L7QsdC7LiwgMTUwMDQ5!5e0!3m2!1sru!2sru!4v1557758338173!5m2!1sru!2sru" width="280" height="186" style="border:0" allowfullscreen></iframe></div>
+				<div class="page-main__map-city-spb-g">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d840.3425013042357!2d30.32685684758465!3d59.93740939698961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310f18b698ef%3A0xed094b49509004b9!2z0L3QsNCxLiDQutCw0L3QsNC70LAg0JPRgNC40LHQvtC10LTQvtCy0LAsIDYsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1557758769586!5m2!1sru!2sru" width="280" height="186" style="border:0" allowfullscreen></iframe></div>
+			</div>
+				
+		</section>
+
+	</main>
+
+	<footer class="page-footer">
+		<div class="container">
+			<div class="page-footer__flex">
+				<svg class="page-footer__image" width="103" height="20">
+					<use xlink:href="#svg-logo"></use>
+				</svg>
+				<p class="page-footer__copy p0">© Все права защищены</p>
+			</div>
+			<p class="page-footer__policy p0">Отправляя свои данные, вы соглашаетесь с политикой конфиденциальности и правилами обработки персональных данных.</p>
+		</div>
+	</footer>
+
+	<section class="popup">
+		<div class="popup--wrap">
+			<button class="popup--btn-closed">
+				<span class="visually-hidden">Закрыть меню</span>
+			</button>
+			<h2 class="popup--heading p0">Откликнуться на вакансию</h2>
+			<p class="popup--desc p0">Прикрепите резюме и напишите о себе. Мы свяжемся.</p>
+			<form class="popup--form" action="#" method="post">
+				<div class="popup--form-btn-wrap">
+					<button class="popup--form-btn popup--form-btn-msk popup--form-btn__active" type="button">Москва</button>
+					<button class="popup--form-btn popup--form-btn-spb" type="button">Санкт-Петербург</button>
+					<button class="popup--form-btn popup--form-btn-yar" type="button">Ярославль</button>
+				</div>
+				<textarea class="popup--form-textarea" name="textarea" id="textarea" rows="4" placeholder="Сопроводительный комментарий и телефон для связи"></textarea>
+				<div class="popup--form-wrap">
+					<label class="popup--form-label" for="downloadFile">Загрузить резюме
+						<input type="file" name="downloadFile" id="downloadFile" accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+					</label>
+					<p class="popup--form-desc">(.doc, .docx или .pdf)</p>
+				</div>
+				<input class="popup--form-button main-btn" type="submit" value="Отправить">
+			</form>
+		</div>
+	</section>
+
+	<div class="popup-shadow"></div>
+
+	<script src="scripts/script-header.js"></script>
+	<script src="scripts/script-popup.js"></script>
+	<script src="scripts/slider1.js"></script>
+	<script src="scripts/slider2.js"></script>
+	<script src="scripts/slider-success.js"></script>
+	<script src="scripts/map.js"></script>
+	<script src="scripts/spoiler.js"></script>
+
+</body>
+</html>
