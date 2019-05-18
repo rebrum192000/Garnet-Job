@@ -633,7 +633,7 @@ button {
 	}
 
 	.page-main__join-head{
-		padding-top: 140px;
+		padding-top: 80px;
 		font-size: 56px;
 		line-height: 72px;
 		padding-right: 530px;
@@ -650,16 +650,16 @@ button {
 		letter-spacing: 0.025em;
 	}
 	.page-main__join-button{
-		margin-bottom: 135px;
+		margin-bottom: 245px;
 		margin-left: 21px;
 	}	
 }
 @media (min-width: 1440px) {
 	.page-main__join-head{
-		padding-top: 205px;
+		padding-top: 145px;
 	}
 	.page-main__join-button{
-		margin-bottom: 120px;
+		margin-bottom: 180px;
 	}	
 }
 @media (min-width: 1540px) {
@@ -688,12 +688,15 @@ button {
 		height: 100vh;
 	}
 	.page-main__join-head{
-		padding-top: 230px;
+		padding-top: 165px;
+	}
+	.page-main__join-button{
+		margin-bottom: 160px;
 	}
 }
 @media (min-width: 1920px) {
 	.page-main__join-head{
-		padding-top: 300px;
+		padding-top: 220px;
 	}
 }
 
