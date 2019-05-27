@@ -16,7 +16,9 @@ function minusSlide2() {
 function currentSlide2(m) {
     showSlides2(slideI = m);
 }
-
+setInterval(function() { // ставим пятисекундный интервал для перелистывания картинок
+            plusSlide2();
+        },8000);
 /* Основная функция слайдера */
 function showSlides2(m) {
     var j;

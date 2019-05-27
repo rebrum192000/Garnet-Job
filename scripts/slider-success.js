@@ -18,6 +18,10 @@ if (screen.width < 768) {
         showSlides3(slideR = o);
     }
 
+    setInterval(function() { // ставим пятисекундный интервал для перелистывания картинок
+            plusSlide3();
+        },8000);
+
     /* Основная функция слайдера */
     function showSlides3(o) {
         var k;
@@ -56,6 +60,9 @@ if (screen.width < 768) {
     function currentSlideDesk(z) {
         showSlides4(slideRi = z);
     }
+    setInterval(function() { // ставим пятисекундный интервал для перелистывания картинок
+            plusSlide4();
+        },8000);
     /* Основная функция слайдера */
     function showSlides4(z) {
         var w;

@@ -1,6 +1,8 @@
+
 /* Индекс слайда по умолчанию */
 var slideIndex = 1;
 showSlides(slideIndex);
+
 
 /* Функция увеличивает индекс на 1, показывает следующй слайд*/
 function plusSlide() {
@@ -16,9 +18,12 @@ function minusSlide() {
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
-
+setInterval(function() { // ставим пятисекундный интервал для перелистывания картинок
+            plusSlide();
+        },8000);
 /* Основная функция слайдера */
 function showSlides(n) {
+
     var i;
     var slides = document.getElementsByClassName("page-main__about-slide");
     var dots = document.getElementsByClassName("page-main__about-button");
@@ -28,6 +33,7 @@ function showSlides(n) {
     if (n < 1) {
         slideIndex = slides.length
     }
+
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
@@ -36,4 +42,5 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
+
 }

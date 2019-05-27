@@ -26,7 +26,7 @@
 			<button class="page-header--btn-burger">
 				<span class="visually-hidden">Открыть меню</span>
 			</button>
-			<a href="#" class="page-header--svg-logo-link">
+			<a href="#start" class="page-header--svg-logo-link">
 				<svg class="page-header--svg-logo page-header--svg-logo__static" width="133" height="28">
 					<use xlink:href="#svg-logo"></use>
 				</svg>
@@ -87,7 +87,7 @@
 	</header>
 
 
-	<main class="page-main">
+	<main class="page-main" id="start">
 		<section class="page-main__join">
 			<div class="page-main__join-nobg container">
 				<h2 class="page-main__join-head p0">Присоединяйтесь к нам!</h2>
@@ -497,11 +497,11 @@
 			<div class="page-main__vac-team container">
 				<p class="page-main__vac-team-head p0">Хотите попасть в команду GARNET?</p>
 				<p class="page-main__vac-team-descr p0">Прикрепите резюме и напишите о себе. Мы свяжемся.</p>
-				<form class="page-main__vac-team-form" action="#" method="post">
-					<textarea class="page-main__vac-team-textarea" name="textarea-team" id="textarea-team" rows="4" placeholder="Сопроводительный комментарий"></textarea>
+				<form class="page-main__vac-team-form" action="send.php" method="post">
+					<textarea class="page-main__vac-team-textarea" name="text" id="textarea-team" rows="4" placeholder="Сопроводительный комментарий" required></textarea>
 					<div class="page-main__vac-team-wrap">
-						<label class="page-main__vac-team-label" for="downloadFile-team">Загрузить резюме
-							<input type="file" name="downloadFile-team" id="downloadFile-team" accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+						<label class="page-main__vac-team-label" for="cv">Загрузить резюме
+							<input type="file" name="cv" id="cv" accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document">
 						</label>
 						<p class="page-main__vac-team-form-desc">(.doc, .docx или .pdf)</p>
 					</div>
@@ -601,7 +601,7 @@
 	<section class="popup">
 		<div class="popup--wrap">
 			<button class="popup--btn-closed">
-				<span class="visually-hidden">Закрыть меню</span>
+				<span class="visually-hidden">Закрыть</span>
 			</button>
 			<h2 class="popup--heading p0">Откликнуться на вакансию</h2>
 			<p class="popup--desc p0">Прикрепите резюме и напишите о себе. Мы свяжемся.</p>
@@ -611,7 +611,7 @@
 					<button class="popup--form-btn popup--form-btn-spb" type="button">Санкт-Петербург</button>
 					<button class="popup--form-btn popup--form-btn-yar" type="button">Ярославль</button>
 				</div>
-				<textarea class="popup--form-textarea" name="textarea" id="textarea" rows="4" placeholder="Сопроводительный комментарий и телефон для связи"></textarea>
+				<textarea class="popup--form-textarea" name="textarea" id="textarea" rows="4" placeholder="Сопроводительный комментарий и телефон для связи" required></textarea>
 				<div class="popup--form-wrap">
 					<label class="popup--form-label" for="downloadFile">Загрузить резюме
 						<input type="file" name="downloadFile" id="downloadFile" accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document">
@@ -622,16 +622,55 @@
 			</form>
 		</div>
 	</section>
-
 	<div class="popup-shadow"></div>
+
+
+	<section class="thank">
+		<div class="thank--wrap">
+			<button class="thank--btn-closed">
+				<span class="visually-hidden">Закрыть</span>
+			</button>
+			<h2 class="thank--heading">спасибо</h2>
+			<p class="thank--desc">Если нам по-пути, мы свяжемся с вами в ближайшее время.</p>
+			<button class="thank-button main-btn">Закрыть</button>
+		</div>
+	</section>
+	<div class="thank-shadow"></div>
+	
+	<!-- <script>
+		var redirected = false;
+            function redirect() {
+                if (!redirected) {
+                    var thankJS = document.querySelector('.thank');
+					var thShadowJS = document.querySelector('.thank-shadow');
+					thankJS.setAttribute("style", "display:block");
+					thShadowJS.setAttribute("style", "display:block");
+                }
+            }
+	</script> -->
+
+	<!-- <script>
+		var redirected = false;
+            function redirect() {
+                if (!redirected) {
+                    var thankJS = document.querySelector('.thank');
+					var thShadowJS = document.querySelector('.thank-shadow');
+					thankJS.setAttribute("style", "display:block");
+					thShadowJS.setAttribute("style", "display:block");
+                }
+            }
+	</script> -->
 
 	<script src="scripts/script-header.js"></script>
 	<script src="scripts/script-popup.js"></script>
+	<script src="scripts/script-thank.js"></script>
 	<script src="scripts/slider1.js"></script>
 	<script src="scripts/slider2.js"></script>
 	<script src="scripts/slider-success.js"></script>
 	<script src="scripts/map.js"></script>
 	<script src="scripts/spoiler.js"></script>
+	<script src="scripts/scroll.js"></script>
+	
 
 </body>
 </html>
